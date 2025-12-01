@@ -1,0 +1,5 @@
+{
+  "name": "GitLens Explorer",
+  "description": "A production-ready GitHub commit browser. Explore public repositories, view diffs, and browse file snapshots commit-by-commit.",
+  "requestFramePermissions": []
+}
