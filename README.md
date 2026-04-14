@@ -1,20 +1,78 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# GitLens Explorer
 
-# Run and deploy your AI Studio app
+GitLens Explorer is a React + Vite app for browsing public GitHub repositories, commit history, diffs, and file snapshots in a fast UI.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1OsK49rAB9RaoFMmoC8kQdK-SpNKUR2rM
+- Explore any public repository by entering `owner/repo`
+- Browse commit history with API pagination
+- Virtualized commit list for smooth scrolling
+- Diff and snapshot modes for each commit
+- Virtualized code and diff rendering for large files
+- Save multiple GitHub profiles in `localStorage`
+- Open a profile page and browse all public repos for that user
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React
+- TypeScript
+- Vite
+- React Router
+- PrismJS
+- date-fns
+- lucide-react
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js 18+ (recommended)
+- npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Run
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+## Build
+
+```bash
+npm run build
+```
+
+## How It Works
+
+- Uses the GitHub public REST API (`https://api.github.com`)
+- No credentials are required for public repository browsing
+- Saved profiles are stored only in browser `localStorage`
+
+## Project Structure
+
+- `App.tsx` - routing + landing/profile/repo pages
+- `services/githubService.ts` - GitHub API calls
+- `components/CommitListSidebar.tsx` - virtualized commit sidebar
+- `components/DiffViewer.tsx` - commit diff view
+- `components/SnapshotViewer.tsx` - file tree + source/diff tabs
+- `components/CodeBlock.tsx` - virtualized highlighted code view
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repo
+2. Create your feature branch
+3. Commit your changes
+4. Open a pull request
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE`.

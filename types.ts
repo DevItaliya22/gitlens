@@ -3,6 +3,26 @@ export interface GitHubUser {
   avatar_url: string;
 }
 
+export interface GitHubProfile {
+  login: string;
+  avatar_url: string;
+  html_url: string;
+  name?: string | null;
+}
+
+export interface GitHubRepo {
+  id: number;
+  name: string;
+  full_name: string;
+  description: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+  updated_at: string;
+  html_url: string;
+  private: boolean;
+}
+
 export interface CommitAuthor {
   name: string;
   email: string;
@@ -38,7 +58,14 @@ export interface Branch {
 export interface FileDiff {
   sha: string;
   filename: string;
-  status: 'added' | 'removed' | 'modified' | 'renamed' | 'copied' | 'changed' | 'unchanged';
+  status:
+    | "added"
+    | "removed"
+    | "modified"
+    | "renamed"
+    | "copied"
+    | "changed"
+    | "unchanged";
   additions: number;
   deletions: number;
   changes: number;
@@ -60,7 +87,7 @@ export interface CommitDetail extends Commit {
 export interface TreeItem {
   path: string;
   mode: string;
-  type: 'blob' | 'tree';
+  type: "blob" | "tree";
   sha: string;
   size?: number;
   url: string;
@@ -74,8 +101,8 @@ export interface TreeResponse {
 }
 
 export enum ViewMode {
-  DIFF = 'DIFF',
-  SNAPSHOT = 'SNAPSHOT',
+  DIFF = "DIFF",
+  SNAPSHOT = "SNAPSHOT",
 }
 
 export interface RepoContextState {
