@@ -2,6 +2,8 @@
 
 GitLens Explorer is a React + Vite app for browsing public GitHub repositories, commit history, diffs, and file snapshots in a fast UI.
 
+You won’t be able to deploy this on Vercel because GitHub has rate limits per IP address, and Vercel is always blocked. However, you can always clone the repository and use it. 💙
+
 ## Features
 
 - Explore any public repository by entering `owner/repo`
